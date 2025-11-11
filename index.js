@@ -18,6 +18,10 @@ document.querySelectorAll('.call-btn').forEach(element => {
     
  element.addEventListener('click', function(e){
 
-    console.log('call btn clicked')
+   const mainPoint = parseInt(document.getElementById('point').innerText)
+    const settext = mainPoint - 20
+   mainPoint.innerText = settext
+   console.log(settext)      
+
 })
 });
