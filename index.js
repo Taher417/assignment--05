@@ -13,15 +13,18 @@ for (let i = 0; i < heartElements.length; i++) {
     });
 }
 
-
+let cuttingPoint = 20
 document.querySelectorAll('.call-btn').forEach(element => {
     
  element.addEventListener('click', function(e){
 
    const mainPoint = parseInt(document.getElementById('point').innerText)
-    const settext = mainPoint - 20
-   mainPoint.innerText = settext
-   console.log(settext)      
+    const settext = mainPoint - cuttingPoint
+    if(mainPoint < cuttingPoint ){
+        alert('Not enough coins')
+        return
+    }
+   document.getElementById('point').innerText = settext     
 
 })
 });
