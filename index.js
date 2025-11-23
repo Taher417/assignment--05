@@ -21,11 +21,15 @@ const copyElements = document.getElementsByClassName('copy-btn');
 for (let i = 0; i < copyElements.length; i++) {
 
     copyElements[i].addEventListener('click', function(e) {
-
+        
         e.preventDefault()
+         const card = this.closest('.card')
+         const Number = card.querySelector('.number').innerText
+        alert(`${Number} number is copied`)
         counter++;
         const copyCounter = document.getElementById('copy-counter');
         copyCounter.textContent = counter;
+        
     });
 }
 
