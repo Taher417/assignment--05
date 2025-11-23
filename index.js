@@ -13,6 +13,8 @@ for (let i = 0; i < heartElements.length; i++) {
     });
 }
 
+
+
 let cuttingPoint = 20
 document.querySelectorAll('.call-btn').forEach(element => {
     
@@ -20,11 +22,35 @@ document.querySelectorAll('.call-btn').forEach(element => {
 
    const mainPoint = parseInt(document.getElementById('point').innerText)
     const settext = mainPoint - cuttingPoint
+    
     if(mainPoint < cuttingPoint ){
-        alert('Not enough coins')
-        return
+        
+        alert('Not Enough Coins')
+        return      
     }
+    const card = this.closest('.card')
+    const subtitle = card.querySelector('.subtitle').innerText
+    const Number = card.querySelector('.number').innerText
+    alert(`📞Calling ${subtitle} ${Number}..... ` );
    document.getElementById('point').innerText = settext     
 
+   const callContainer = document.getElementById('cart-container')
+
+   const newCall = document.createElement("div")
+
+   newCall.innerHTML = `
+                <div class=" w-full h-20 mt-[10px] rounded-xl flex justify-between items-center p-2 bg-[#c1f0c1]">
+                    <div>
+                        <span class="text-[17px] font-semibold">${subtitle}</span>
+                    <br>
+                    <span class="font-semibold">${Number}</span>
+                    </div>
+                    <div>
+                        10:45:36 AM
+                    </div>
+                </div>
+   `
+
+   callContainer.append(newCall);
 })
 });
