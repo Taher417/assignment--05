@@ -14,6 +14,20 @@ for (let i = 0; i < heartElements.length; i++) {
         heartCounter.textContent = count;
     });
 }
+let counter = 0;
+
+const copyElements = document.getElementsByClassName('copy-btn');
+
+for (let i = 0; i < copyElements.length; i++) {
+
+    copyElements[i].addEventListener('click', function(e) {
+
+        e.preventDefault()
+        counter++;
+        const copyCounter = document.getElementById('copy-counter');
+        copyCounter.textContent = counter;
+    });
+}
 
 
 
@@ -73,11 +87,7 @@ document.getElementById('clear-btn').addEventListener('click', function(e){
 
 })
 
-// const forms = document.getElementsByClassName('form')
 
-//     for(const form of forms ){
-//         form.style.display = 'none'
-//     }
 
 
 
