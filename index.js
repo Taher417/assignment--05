@@ -25,7 +25,10 @@ for (let i = 0; i < copyElements.length; i++) {
         e.preventDefault()
          const card = this.closest('.card')
          const Number = card.querySelector('.number').innerText
-        alert(`${Number} number is copied`)
+        
+        navigator.clipboard.writeText(Number).then(()=>{
+            alert(`${Number} number is copied Successfully`)
+        })
         counter++;
         const copyCounter = document.getElementById('copy-counter');
         copyCounter.textContent = counter;
