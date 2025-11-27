@@ -23,15 +23,16 @@ for (let i = 0; i < copyElements.length; i++) {
     copyElements[i].addEventListener('click', function(e) {
         
         e.preventDefault()
-         const card = this.closest('.card')
+         
+        counter++;
+        const copyCounter = document.getElementById('copy-counter');
+        copyCounter.textContent = counter;
+        const card = this.closest('.card')
          const Number = card.querySelector('.number').innerText
         
         navigator.clipboard.writeText(Number).then(()=>{
             alert(`${Number} number is copied Successfully`)
         })
-        counter++;
-        const copyCounter = document.getElementById('copy-counter');
-        copyCounter.textContent = counter;
         
     });
 }
